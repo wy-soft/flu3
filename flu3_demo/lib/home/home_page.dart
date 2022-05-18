@@ -17,7 +17,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: _getBody(), // This trailing comma makes auto-formatting nicer for build methods.
+      body:
+          _getBody(), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
@@ -30,6 +31,12 @@ class _MyHomePageState extends State<MyHomePage> {
               return Text(Module.values[index].name);
             },
             childCount: Module.values.length,
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: PlatformMenuBar(
+            body: Text('123'),
+            menus: [],
           ),
         ),
       ],
